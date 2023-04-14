@@ -1,6 +1,11 @@
 import React from "react";
 import Link from "next/link";
 
+export const metadata = {
+  title: "About the API",
+  description: "Information about the project and the API used",
+};
+
 const AboutPage = () => {
   return (
     <div className="my-6">
