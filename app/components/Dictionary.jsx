@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 
 const Dictionary = ({ search, results, noSearchResult, loading }) => {
   return (
-    <div className="my-0 mx-auto">
+    <div className="my-0 mx-auto px-2">
       <Suspense fallback={<p>Loading feed...</p>}>
         {loading && <p className="animate-bounce">Loading result...</p>}{" "}
       </Suspense>
@@ -14,7 +14,7 @@ const Dictionary = ({ search, results, noSearchResult, loading }) => {
               <div key={result.id}>
                 <div className="py-3">
                   <div className="flex items-center gap-2">
-                    <p className="text-3xl font-bold first-letter:uppercase">
+                    <p className="lg:text-4xl text-3xl font-bold first-letter:uppercase">
                       {" "}
                       {result.word}
                     </p>
@@ -49,8 +49,17 @@ const Dictionary = ({ search, results, noSearchResult, loading }) => {
                               </p>
 
                               {/* Examples */}
-                              <div className=" ">
-                                <span className="ml-2 text-slate-500 italic text-sm">
+                              <div className="mb-2 ml-6">
+                                <span className=" text-slate-500 italic text-sm first-letter:uppercase">
+                                  <span>
+                                    {definition.example ? (
+                                      <span className="font-bold">
+                                        Example:{" "}
+                                      </span>
+                                    ) : (
+                                      ""
+                                    )}
+                                  </span>
                                   {definition.example}
                                 </span>
                               </div>
@@ -70,7 +79,7 @@ const Dictionary = ({ search, results, noSearchResult, loading }) => {
             <>
               <div>
                 No results found for{" "}
-                <span className="font-bold">{`${search}`}</span>{" "}
+                {noSearchResult && <span className="font-bold">{search}</span>}
               </div>
             </>
           )

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Dictionary from "./Dictionary";
 
 const SearchForm = () => {
@@ -9,6 +9,20 @@ const SearchForm = () => {
   const [results, setResults] = useState([]);
   const [noSearchResult, setNoSearchResult] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const ref = useRef();
+
+  // Focus the input when page loads
+
+  useEffect(() => {
+    ref.current.focus();
+    // Check again when the result is not seen and clear the result info when the input is focus
+    if (ref.current.focus()) {
+      setNoSearchResult(!noSearchResult);
+    } else {
+      setNoSearchResult(false);
+    }
+  }, [search]);
 
   //   Search Function the handles the search api request
   async function handleSearch(e) {
@@ -39,18 +53,19 @@ const SearchForm = () => {
     <>
       <form
         onSubmit={handleSearch}
-        className="grid lg:grid-cols-8 md:grid-cols-8 grid-cols-2 my-6 hover:bg-green-500"
+        className="grid lg:grid-cols-8 md:grid-cols-8 grid-cols-2 my-6 "
       >
         <input
           type="search"
+          ref={ref}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Type here to search here"
-          className="w-full bg-green-100 lg:col-span-7 md:col-span-7 col-span-2 py-3 px-4 focus:ring-0 focus:ring-offset-0 border-none focus:outline-none"
+          className="w-full bg-green-100 lg:col-span-7 md:col-span-7  col-span-2 py-3 px-6 focus:ring-0 focus:ring-offset-0 border-none focus:outline-none lg:rounded-l-full md:rounded-l-full "
         />
         <button
           type="submit"
-          className="lg:col-span-1 md:col-span-1 col-span-2 bg-green-600 text-white py-3 px-4 hover:bg-green-500"
+          className="lg:col-span-1 md:col-span-1  col-span-2 bg-green-600 text-white py-3 px-4 hover:bg-green-500 lg:rounded-r-full font-bold md:rounded-r-full lg:text-sm text-xs"
         >
           Search
         </button>
