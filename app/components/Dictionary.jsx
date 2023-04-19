@@ -11,10 +11,10 @@ const Dictionary = ({ search, results, noSearchResult, loading }) => {
         {Object.keys(results).length > 0 ? (
           <>
             {results.map((result) => (
-              <div key={result.id}>
-                <div className="py-3">
+              <div key={result.id} >
+                <div className="py-3" data-aos="slide-up"  data-aos-easing="ease-in-cubic">
                   <div className="flex items-center gap-2">
-                    <p className="lg:text-4xl text-3xl font-bold first-letter:uppercase">
+                    <p className="lg:text-4xl text-3xl font-bold first-letter:uppercase" data-aos="zoom-in-left"  data-aos-offset="200">
                       {" "}
                       {result.word}
                     </p>
@@ -38,13 +38,13 @@ const Dictionary = ({ search, results, noSearchResult, loading }) => {
                   <p>
                     {result.meanings.map((meaning) => (
                       <div>
-                        <p className="font-bold first-letter:uppercase my-2">
+                        <p className="font-bold first-letter:uppercase my-2" data-aos="slide-up" data-aos-delay="50" data-aos-easing="ease-in-cubic">
                           {meaning.partOfSpeech}
                         </p>
                         <div className="mb-3">
                           {meaning.definitions.map((definition) => (
                             <div>
-                              <p className="mb-2 list-item ml-6">
+                              <p className="mb-2 list-item ml-6" data-aos="slide-up" data-aos-delay="50" data-aos-easing="ease-in-sine">
                                 {definition.definition}
                               </p>
 

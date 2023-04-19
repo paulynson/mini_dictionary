@@ -3,6 +3,8 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
 import Dictionary from "./Dictionary";
+import AOS from "aos";
+import 'aos/dist/aos.css';
 
 const SearchForm = () => {
   const [search, setSearch] = useState("");
@@ -12,8 +14,17 @@ const SearchForm = () => {
 
   const ref = useRef();
 
-  // Focus the input when page loads
+  // Animation
+  useEffect(() => {
+    AOS.init({
+      easing: "ease-out-cubic",
+      once: false,
+      offset: 50,
+    });
+  }, []);
 
+
+  // Focus the input when page loads
   useEffect(() => {
     ref.current.focus();
     // Check again when the result is not seen and clear the result info when the input is focus
@@ -53,7 +64,8 @@ const SearchForm = () => {
     <>
       <form
         onSubmit={handleSearch}
-        className="grid lg:grid-cols-8 md:grid-cols-8 grid-cols-2 my-6 "
+        className="grid lg:grid-cols-8 md:grid-cols-8 grid-cols-2 my-6"
+        data-aos="flip-left" data-aos-delay="50"
       >
         <input
           type="search"
@@ -75,6 +87,8 @@ const SearchForm = () => {
         noSearchResult={noSearchResult}
         search={search}
         loading={loading}
+        
+
       />
     </>
   );
