@@ -5,8 +5,8 @@
 
 # ------------------------------------------------------------------ #
 
-# Desktop View
+## Desktop View
 ![Getting Started](./public/mini_desktop.png)
 
-# Mobile View
+## Mobile View
 ![Getting Started](./public/mini_mobile.png)
