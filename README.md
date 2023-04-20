@@ -1,3 +1,8 @@
+## Mini-Dictionary
+
+# The idea of the program is to get word definitions from dictionary, with the sound and the meanings
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
