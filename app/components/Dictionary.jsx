@@ -12,7 +12,7 @@ const Dictionary = ({ search, results, noSearchResult, loading }) => {
           <>
             {results.map((result) => (
               <div key={result.id} >
-                <div className="py-3" data-aos="slide-up"  data-aos-easing="ease-in-cubic">
+                <div className="py-3">
                   <div className="flex items-center gap-2">
                     <p className="lg:text-4xl text-3xl font-bold first-letter:uppercase" data-aos="zoom-in-left"  data-aos-offset="200">
                       {" "}
@@ -27,6 +27,7 @@ const Dictionary = ({ search, results, noSearchResult, loading }) => {
                           controls
                           src={phonne.audio}
                           className="sm:min-w-[80px]"
+                          data-aos="slide-left"  data-aos-easing="ease-in-cubic"
                         ></audio>
                       </div>
                     ))}
