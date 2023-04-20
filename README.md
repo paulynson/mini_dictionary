@@ -10,4 +10,4 @@
 ![Getting Started](./public/mini_desktop.png)
 
 # Mobile View
-![Getting Started](./public/mini.png)
+![Getting Started](./public/mini_mobile.png)
