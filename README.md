@@ -6,7 +6,6 @@
 # ------------------------------------------------------------------ #
 
 # Desktop View
-
 ![Getting Started](./public/mini_desktop.png)
 
 # Mobile View
