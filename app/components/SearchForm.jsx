@@ -73,11 +73,11 @@ const SearchForm = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Type here to search here"
-          className="w-full bg-green-100 lg:col-span-7 md:col-span-7  col-span-2 py-3 px-6 focus:ring-0 focus:ring-offset-0 border-none focus:outline-none lg:rounded-l-full md:rounded-l-full "
+          className="w-full bg-green-100 lg:col-span-7 md:col-span-7  col-span-2 lg:py-3 py-4 px-6 focus:ring-0 focus:ring-offset-0 border-none focus:outline-none lg:rounded-l-full md:rounded-l-full "
         />
         <button
           type="submit"
-          className="lg:col-span-1 md:col-span-1  col-span-2 bg-green-600 text-white py-3 px-4 hover:bg-green-500 lg:rounded-r-full font-bold md:rounded-r-full lg:text-sm text-xs"
+          className="lg:col-span-1 md:col-span-1 col-span-2 bg-green-600 text-white py-3 px-4 hover:bg-green-500 lg:rounded-r-full font-bold md:rounded-r-full lg:text-sm text-xs"
         >
           Search
         </button>
